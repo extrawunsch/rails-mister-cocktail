@@ -1,0 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1593060190480-7823e800e645?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);">
+  <div class="container">
+    <h1>Animus brings you the best cocktails right to your kitchen!</h1>
+    <br>
+    <%= link_to 'Add Cocktail!', new_cocktail_path, class: "btn btn-success p-3" %>
+  </div>
+</div>
+
+<% #iterate over the List @cocktails to display all of them (seed?)  %>
+<div class="container m-5">
+    <div class="cards">
+        <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: "card", style: "background-image: url(#{cocktail.image_url})" %>
+        <% end %>
+    <div>
+</div> 
+<footer class="footer">
+</footer>
+
+
