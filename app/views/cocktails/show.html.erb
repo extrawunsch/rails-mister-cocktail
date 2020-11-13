@@ -3,4 +3,32 @@
     <h1><%= @cocktail.name %> </h1>
   </div>
 </div>
+
+<div class="container mt-5">
+<ul class="list-group-flush">
+  <% @cocktail.doses.each do |dose| %>
+    <li class="list-group-item">
+    <div class="card-product">
+      <img src="https://source.unsplash.com/weekly/?<%= dose.ingredient.name %>" />
+      <div class="card-product-infos">
+        <h3><%= dose.ingredient.name %></h3>
+        <span class="badge badge-primary badge-pill p-3"><%= dose.description %></span>
+      </div>
+      <div class="card-product-link">
+      <%= link_to "Delete Ingredient", dose_path(@cocktail), method: :delete, data: { confirm: "Do you really want to delete this ingredient?" } %>
+      </div>
+    </div>
+  </li>    
+  <% end %>
+</ul>
+</div>
+
+<div class="container m-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <%= render 'doses/form' %>
+    </div>
+  </div>
+</div>
+<%= link_to 'Back to Homepage', cocktails_path %>
 <%# <%= link_to 'Add Ingredient!',  new_cocktail_dose_path, class: "btn btn-primary" %>
