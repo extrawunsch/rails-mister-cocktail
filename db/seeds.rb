@@ -19,10 +19,11 @@ Ingredient.destroy_all
 sleep 1 
 
 puts "Creating drinks..."
-Cocktail.create(name: 'The Ultimate Whiskey Sour', image_url: 'https://images.unsplash.com/photo-1591634586875-a1e4b9725c94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
-Cocktail.create(name: 'Gin Tonic Twist', image_url: 'https://images.unsplash.com/photo-1604321115296-f4b73745c7d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
-Cocktail.create(name: 'Fizzy Basil Mojito', image_url: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=600&q=60')
-Cocktail.create(name: 'Quick Aperol Spritz', image_url: 'https://images.unsplash.com/photo-1560433956-b2847671bb86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=648&q=80')
+whiskey = Cocktail.create(name: 'The Ultimate Whiskey Sour', image_url: 'https://images.unsplash.com/photo-1591634586875-a1e4b9725c94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
+gin = Cocktail.create(name: 'Gin Tonic Twist', image_url: 'https://images.unsplash.com/photo-1604321115296-f4b73745c7d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
+mojito = Cocktail.create(name: 'Fizzy Basil Mojito', image_url: 'https://images.unsplash.com/photo-1551538827-9c037cb4f32a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=600&q=60')
+aperol = Cocktail.create(name: 'Quick Aperol Spritz', image_url: 'https://images.unsplash.com/photo-1560433956-b2847671bb86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=648&q=80')
+
 
 list.each do |ingredient|
   zutat = Ingredient.create(name: ingredient["strIngredient1"])
