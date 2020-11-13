@@ -12,7 +12,7 @@ require 'open-uri'
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 list_serialized = open(url).read
 ingredients = JSON.parse(list_serialized)
-list = ingredients["drinks"]
+list = ingredients["drinks"].sort_by { |change| change }
 
 puts "Cleaning database..."
 Ingredient.destroy_all
